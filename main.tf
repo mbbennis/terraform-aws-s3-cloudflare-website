@@ -65,7 +65,7 @@ resource "aws_s3_bucket_policy" "website_bucket_policy" {
   ]
 }
 
-resource "cloudflare_dns_record" "website" {
+resource "cloudflare_dns_record" "domain" {
   type    = "CNAME"
   zone_id = var.cloudflare_zone_id
   name    = var.domain_name
@@ -74,7 +74,7 @@ resource "cloudflare_dns_record" "website" {
   proxied = true
 }
 
-resource "cloudflare_dns_record" "website" {
+resource "cloudflare_dns_record" "www" {
   type    = "CNAME"
   zone_id = var.cloudflare_zone_id
   name    = "www"
